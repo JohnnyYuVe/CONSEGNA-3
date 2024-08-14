@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+		<record>
+				<ID_ARTICOLO>	1				</ID_ARTICOLO>
+				<CODICE_ART>	20002Z001		</CODICE_ART>
+				<NOME_ARTICOLO>	T-shirt shark	</NOME_ARTICOLO>
+				<NOME_BRAND>	palm angels		</NOME_BRAND>
+				<MADE_IN>		china			</MADE_IN>		
+				<COMPOSIZIONE>	cotone			</COMPOSIZIONE>
+				<TAGLIA>		S				</TAGLIA>
+				<PREZZO_UNITARIO> 44.50			</PREZZO_UNITARIO>
+		</record>
+
+		<record>
+				<ID_ARTICOLO>	2				</ID_ARTICOLO>
+				<CODICE_ART>	20002Z002		</CODICE_ART>
+				<NOME_ARTICOLO>	T-shirt shark	</NOME_ARTICOLO>
+				<NOME_BRAND>	palm angels		</NOME_BRAND>
+				<MADE_IN>		china			</MADE_IN>		
+				<COMPOSIZIONE>	cotone			</COMPOSIZIONE>
+				<TAGLIA>		M				</TAGLIA>
+				<PREZZO_UNITARIO> 44.50			</PREZZO_UNITARIO>
+		</record>		
+
+
+
+
+</root>
