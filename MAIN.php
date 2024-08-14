@@ -58,11 +58,27 @@ if(empty($_POST['Nome_art'] ) || empty($_POST['Prezzo'])|| empty($_POST['id_art'
 </head>	
 
 <body>
+<!--Piccolo menu a barra sulla parte alta della pagina -->
+<div class="Box_Container_Nav">
+									<div class="Box_Button_Nav">	<a href="RegistrazioneForm.php">Register</a> </div>  
+									<div class="Box_Button_Nav">	<a href="LOGIN.php">LOG-IN</a>	</div>
+									
+																														
+									<div class="Box_Button_Nav">	<a href="carrello.php">Carrello</a> </div>
+									<div class="Box_Button_Nav">	<a href=""></a> </div>
+									<div class="Box_Button_Nav">	<a href="LOGOUT.php">LOG-OUT</a> </div>	
 
+
+</div>	
+
+	
+<div class="Box_Container_Art">
 
 <?php
 	$t2=microtime();
-	
+
+// IL NUMERO DI ELEMENTI DA STAMPARE DENTRO IN UNA PAGINA 	
+	$pageLength = 24;
 // costruisco una stringa avente il contenuto del file PRODOTO_DATA.xml, rimuovendo charatteri aggiuntivi come spazi tra gli elementi, rendendolo più "leggibile".
 	
 	$xmlString = "";
@@ -81,15 +97,31 @@ if(empty($_POST['Nome_art'] ) || empty($_POST['Prezzo'])|| empty($_POST['id_art'
   		 echo "<p>This document is not valid</p>\n";
 	}
 
+
 // inizializzo un puntatore per scorrere i record contenuti nel file.
-	$Record=$doc->documentElement->childNodes;	
+	$RecordsHolder=$doc->documentElement->childNodes;
+
+
+//STAMPA PARZIALE DEGLI ELEMENTI CONTENUTI DENTRO IL FILE XML
+	if ( isset($_GET['next']) ) {
+							$FirstRecordToVisit = $_GET['next'];
+	} else {
+		$FirstRecordToVisit = 0;
+	}
+
+	if ( $RecordsHolder->length - $FirstRecordToVisit < $pageLength ) {
+										$LastRecordToVisit = $RecordsHolder->length;
+	} else {
+			$LastRecordToVisit = $FirstRecordToVisit + $pageLength;
+	}	
 
 // creo un ciclo, nella quale visito tutti i record presenti nel file e ne visualizzo il contenuto.
-/*
-for($i=0; $i<$Record->length; $i++){
+
+
+for( $i = $FirstRecordToVisit; $i<$LastRecordToVisit; $i++ ){
 										//mi posiziono su i-esimo Record e ne visualizzo il contenuto
 										
-										$Record_Visited=$Record->item($i);
+										$Record_Visited=$RecordsHolder->item($i);
 										
 										$Art= 				$Record_Visited->firstChild;
 										$IdArtValue= 		$Art->textContent;
@@ -114,8 +146,8 @@ for($i=0; $i<$Record->length; $i++){
 								
 										$PrezzoUni=			$Record_Visited->lastChild;
 										$PrezzoUniValue=	$PrezzoUni->textContent;
-
- Informazioni contenuti nei record che possono essere visualizzati
+/*
+ //Informazioni contenuti nei record che possono essere visualizzati(mostro solo alcuni dei dati al fine di creare un'anagrafica del prodotto)
 		echo "<p>";
 		echo $IdArtValue."<br>";
 		echo $NomeArtValue."<br>";
@@ -126,7 +158,7 @@ for($i=0; $i<$Record->length; $i++){
 		echo $TagliaValue."<br>";
 		echo $PrezzoUniValue."<br>";
 		echo "<br>";
-	
+*/	
 
 echo "<div class=\"Box_Articolo\">
 
@@ -142,6 +174,7 @@ echo "<div class=\"Box_Articolo\">
 	    echo"<input type=\"hidden\" name=\"id_art\"    value=\"" .$CodArtValue    ."\" >";
 	    echo"<input type=\"hidden\" name=\"id_client\" value=\"" .$_SESSION["cliente_id"] ."\" >";
 //gli hidden type servono per tenere traccia di quale articolo viene aggiunto al carrello.	
+	
 	echo "<div>
 		 	<input type=\"number\" name=\"Quantita\" class=\"Box_quantita\" value=1>
 		</div>";
@@ -158,8 +191,14 @@ echo "<div class=\"Box_Articolo\">
 
 
 }
-*/
-?>
 
+if ( $LastRecordToVisit < $RecordsHolder->length - 1 ) {
+     echo '<p><a href="MAIN.php?next='. $LastRecordToVisit.'">prossimo gruppo di stampe &gt;&gt;&gt;</a></p>';
+} else {
+	print '<p>** Fin **</p>';
+}
+
+?>
+</div>	
 </body>
 </html>	
