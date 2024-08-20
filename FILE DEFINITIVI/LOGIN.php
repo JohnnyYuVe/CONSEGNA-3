@@ -87,7 +87,7 @@ if( isset($_POST['invio']) ){
 				}
 				$Riga = mysqli_fetch_array($Risultato_query);
 
-				// carico le infromazioni dell'utente dentro la sessione;
+				// carico le informazioni dell'utente dentro la sessione;
 				if($Riga){			
 							echo"Inserimento dati nella sessione";
 							session_start();
@@ -96,6 +96,8 @@ if( isset($_POST['invio']) ){
 							$_SESSION['Cognome']=$Riga['COGNOME'];
 							$_SESSION['Username']=$Riga['USERNAME'];
 							$_SESSION['Password']=$Riga['PASSWORD'];
+							$_SESSION['Email']=$Riga['EMAIL'];
+							$_SESSION['COD_FIS']=$Riga['C_F'];
 							header('Location: http://localhost/php_program/cons3/MAIN.php');		
 				}else{
 					echo"Accesso negato";

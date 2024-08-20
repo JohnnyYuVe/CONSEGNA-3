@@ -8,11 +8,14 @@ require_once("Connect_to_Server.php");
 							session_start();
 							echo"</br>qui trovi un piccolo feedback su quello che sta accadendo";
 							echo "</br></br></br>";
-							echo "Codice ID: ". $_SESSION['cliente_id']."</br>";
-							echo "Nome cliente: ". $_SESSION['Nome']."</br>";
-							echo "Cognome cliente: ". $_SESSION['Cognome']."</br>";
-							echo "Username: ". $_SESSION['Username']."</br>";
-							echo "Password ". $_SESSION['Password']."</br>";
+							echo "Codice ID: "		. $_SESSION['cliente_id']."</br>";
+							echo "Nome cliente: "	. $_SESSION['Nome']."</br>";
+							echo "Cognome cliente: "	. $_SESSION['Cognome']."</br>";
+							echo "Username: "		. $_SESSION['Username']."</br>";
+							echo "Password: "		. $_SESSION['Password']."</br>";
+							echo "Email: "			. $_SESSION['Email']."</br>";
+							echo "COD_FIS: "		. $_SESSION['COD_FIS']."</br>";
+							echo "Percorso assoluto del file:". __FILE__;
 ?>
 
 <?php
@@ -169,12 +172,23 @@ echo "<div class=\"Box_Articolo\">
 	
 	echo"<form action=\"MAIN.php?id=".$CodArtValue ."\" method=\"post\">";
 
-		echo"<input type=\"hidden\" name=\"Nome_art\"    value=\"" .$NomeArtValue   . "\" >";   
-		echo"<input type=\"hidden\" name=\"Prezzo\"    value=\"" .$PrezzoUniValue ."\" >";
-	    echo"<input type=\"hidden\" name=\"id_art\"    value=\"" .$CodArtValue    ."\" >";
-	    echo"<input type=\"hidden\" name=\"id_client\" value=\"" .$_SESSION["cliente_id"] ."\" >";
-//gli hidden type servono per tenere traccia di quale articolo viene aggiunto al carrello.	
-	
+		echo"<input type=\"hidden\" name=\"Nome_art\"    			value=\"" . $NomeArtValue   			. "\" >";   
+		echo"<input type=\"hidden\" name=\"Prezzo\"    			value=\"" . $PrezzoUniValue 			. "\" >";
+	     echo"<input type=\"hidden\" name=\"cod_art\"    			value=\"" . $CodArtValue    			. "\" >";
+	     echo"<input type=\"hidden\" name=\"id_art\"    			value=\"" . $IdArtValue    			. "\" >";
+	     echo"<input type=\"hidden\" name=\"name_brand_art\"    	value=\"" . $NameBrandValue    		. "\" >";
+	     echo"<input type=\"hidden\" name=\"made_in_art\"    		value=\"" . $MadeInValue    			. "\" >";
+	     echo"<input type=\"hidden\" name=\"comp_art\"    			value=\"" . $ComposizioneValue    		. "\" >"; 
+	     echo"<input type=\"hidden\" name=\"taglia_art\"    		value=\"" . $TagliaValue    			. "\" >";  
+
+
+
+	     echo"<input type=\"hidden\" name=\"id_client\" 	value=\"" . $_SESSION["cliente_id"]	. "\" >";
+
+
+
+
+		//gli hidden type servono per tenere traccia di quale articolo viene aggiunto al carrello.		
 	echo "<div>
 		 	<input type=\"number\" name=\"Quantita\" class=\"Box_quantita\" value=1>
 		</div>";
@@ -183,17 +197,18 @@ echo "<div class=\"Box_Articolo\">
 			<input type=\"submit\" name=\"add_to_cart\" class=\"Box_bottone\" value=\"Aggiungi al carrello\">
 		</div>";
 
-	echo"</div>
-			</form>	
+	echo"</form>";
+
+echo"</div>;	
 		</br>";	
 
-	echo"</p>";
+	
 
 
 }
 
 if ( $LastRecordToVisit < $RecordsHolder->length - 1 ) {
-     echo '<p><a href="MAIN.php?next='. $LastRecordToVisit.'">prossimo gruppo di stampe &gt;&gt;&gt;</a></p>';
+     echo '<p><a href="MAIN.php?next='. $LastRecordToVisit. '">prossimo gruppo di stampe &gt;&gt;&gt;</a></p>';
 } else {
 	print '<p>** Fin **</p>';
 }

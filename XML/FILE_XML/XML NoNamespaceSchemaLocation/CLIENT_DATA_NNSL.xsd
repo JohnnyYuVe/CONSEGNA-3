@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="root">
+
+   <xsd:complexType>         
+          <xsd:sequence>
+            
+            <xsd:element ref="record" maxOccurs="unbounded" />
+          
+          </xsd:sequence>
+   </xsd:complexType>
+
+</xsd:element>  
+
+
+<xsd:element name="record">
+   
+            <xsd:complexType>           
+                  <xsd:sequence>
+                     
+                     <xsd:element ref="ID_CLIENTE"      />
+                     <xsd:element ref="NOME_CLIENTE"    />
+                     <xsd:element ref="COGNOME_CLIENTE" />
+                     <xsd:element ref="C_F_CLIENTE"     />
+                     <xsd:element ref="USER_CLIENTE"    />
+                     <xsd:element ref="PASS_CLIENTE"    />
+                     <xsd:element ref="EMAIL_CLIENTE"   />
+                 
+                  </xsd:sequence>
+             </xsd:complexType>
+   
+</xsd:element>  
+
+   <xsd:element name="ID_CLIENTE"      type="xsd:string"             />
+   <xsd:element name="NOME_CLIENTE"    type="xsd:string"             />
+   <xsd:element name="COGNOME_CLIENTE" type="xsd:string"             />
+   <xsd:element name="C_F_CLIENTE"     type="xsd:string"             />
+   <xsd:element name="USER_CLIENTE"    type="xsd:string"             />
+   <xsd:element name="PASS_CLIENTE"    type="xsd:string"             />  
+   <xsd:element name="EMAIL_CLIENTE"   type="xsd:string"             />   
+
+</xsd:schema>        

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="https://github.com/JohnnyYuVe/CONSEGNA-3/commi"
+            targetNamespace="https://github.com/JohnnyYuVe/CONSEGNA-3/commi">
+
+<xsd:element name="root">
+
+   <xsd:complexType>           
+          <xsd:sequence>
+            
+            <xsd:element ref="record" maxOccurs="unbounded" />
+          
+          </xsd:sequence>
+
+   </xsd:complexType>
+</xsd:element>  
+
+
+<xsd:element name="record">
+   
+            <xsd:complexType>              
+                  <xsd:sequence>
+                     
+                     <xsd:element ref="ID_ARTICOLO"     />
+                     <xsd:element ref="CODICE_ART"      />
+                     <xsd:element ref="NOME_ARTICOLO"   />
+                     <xsd:element ref="NOME_BRAND"      />
+                     <xsd:element ref="MADE_IN"         />
+                     <xsd:element ref="COMPOSIZIONE"    />
+                     <xsd:element ref="TAGLIA"          />
+                     <xsd:element ref="PREZZO_UNITARIO" />
+                 
+                  </xsd:sequence>
+             </xsd:complexType>
+   
+</xsd:element>  
+
+   <xsd:element name="ID_ARTICOLO"     type="xsd:string"         />
+   <xsd:element name="CODICE_ART"      type="xsd:string"         />
+   <xsd:element name="NOME_ARTICOLO"   type="xsd:string"         />
+   <xsd:element name="NOME_BRAND"      type="xsd:string"         />
+   <xsd:element name="MADE_IN"         type="xsd:string"         />
+   <xsd:element name="COMPOSIZIONE"    type="xsd:string"         />  
+   <xsd:element name="TAGLIA"          type="xsd:string"         />     
+   <xsd:element name="PREZZO_UNITARIO" type="xsd:double"         /> 
+
+</xsd:schema>        
