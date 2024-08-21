@@ -14,7 +14,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 <head>	
 		<title>Login</title>
 		
-		<link rel="stylesheet" href="StileSito.css">
+		<link rel="stylesheet" href="styleTest.css">
 		
 </head>	
 
@@ -98,7 +98,7 @@ if( isset($_POST['invio']) ){
 							$_SESSION['Password']=$Riga['PASSWORD'];
 							$_SESSION['Email']=$Riga['EMAIL'];
 							$_SESSION['COD_FIS']=$Riga['C_F'];
-							header('Location: http://localhost/php_program/cons3/MAIN.php');		
+							header('Location: http://localhost/php_program/cons3 v3/MAIN.php');		
 				}else{
 					echo"Accesso negato";
 				}

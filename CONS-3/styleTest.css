@@ -1,0 +1,216 @@
+			body{
+							background-color: #666 ; 
+							color: white;
+							text-decoration: none;
+							padding: none;
+					}
+
+			.Box_Container_Nav{
+											width: 100%;
+											height: auto;	
+											overflow: hidden;
+											
+																			
+											background-color: red;
+
+											display: flex;
+											flex-direction: row;		
+											flex-wrap: wrap;
+											justify-content: center;
+											align-items: stretch;									
+					}
+
+					.Box_Button_Nav{
+							color: white;
+							text-align: center;							
+							text-decoration: none;
+							width: auto;
+							height: auto;
+							padding: 10px 0px;
+							background-color: darkgrey;
+		
+					}		
+
+			.Box_Container_Art {
+											width: auto;
+											overflow: hidden;
+
+											height: auto;								
+											background-color: #666;
+
+											display: flex;
+											flex-direction: row;		
+											flex-wrap: wrap;
+											justify-content: center;
+											align-items: stretch;
+					}		
+
+			.Box_Articolo  {
+								padding: 10px;
+								height: auto;
+								width: auto;								 
+								margin: 20px;
+								vertical-align: middle;
+								background-color: darkgrey;
+								text-decoration: none;
+								text-align: center;
+								font-size: 30px;
+					}
+
+			.Box_carrello_input{
+									text-align: left;
+									background-color: red;
+									width: 60%;
+
+					}
+
+			.Box_carrello{
+								width: 100%;
+								background-color: green;
+								padding: 40px 40px;
+								border: 1px solid #ccc;
+								
+								display: flex;								
+								flex-direction: row;		
+								flex-wrap: wrap;
+					}
+
+			.Box_remove{
+								
+								height: 100%;
+								width: auto;
+								margin: none;
+								text-decoration: none;
+					}
+
+			.info_art p{
+							  font-size: 30px;		
+					}
+
+			.Box_Container_Input{
+								
+								  display: flex;
+								  justify-content: center;
+								   align-items: center;
+								  flex-direction: column;
+								  font-size: 20px;
+								  
+								  background-color: #666;	
+								  text-align: left;							 
+					}
+
+					
+					.BOX_INPUT{
+								width: 100%;
+								padding: 12px 20px;
+								margin: 8px 0;
+								display: inline-block;
+							    border: 1px solid #ccc;
+					}
+
+					.BOX_BOTTONE{
+								
+								background-color: #04AA6D;
+								border: none;
+								text-decoration: none;
+								color: white;
+								cursor: pointer;  
+
+								  padding: 16px 32px;								  
+								  margin: 4px 2px;
+								  
+					}						
+
+			@media (max-width: 7000px) {
+						  
+											.Box_Articolo {
+													    flex: 20%;
+													    max-width: 20%;
+										 	}
+										 	.Box_Button_Nav{
+										 				flex: 20%;
+													    max-width: 20%;
+										 	}
+					 
+				}		
+
+
+
+
+
+				@media (max-width: 2000px) {
+						  
+											.Box_Articolo {
+													    flex: 20%;
+													    max-width: 20%;
+										 	}
+										 	.Box_Button_Nav{
+										 				flex: 20%;
+													    max-width: 20%;
+										 	}
+					 
+				}		
+
+
+				@media (max-width: 1500px) {
+						  
+											.Box_Articolo {
+													    flex: 25%;
+													    max-width: 25%;
+										 	}
+
+										 	.Box_Button_Nav{
+										 				flex: 20%;
+													    max-width: 20%;
+										 	}
+						 	
+				}
+
+
+				@media (max-width: 1000px) {
+						  
+											.Box_Articolo {
+													    flex: 33%;
+													    max-width: 33%;
+										 	}
+
+										 	.Box_Button_Nav{
+										 				flex: 20%;
+													    max-width: 20%;
+										 	}
+
+										 					 	
+				}
+
+				@media (max-width: 750px) {
+						  
+											.Box_Articolo {
+													    flex: 50%;
+													    max-width: 50%;
+										 	}
+
+										 	.Box_Button_Nav{
+										 				flex: 100%;
+													    max-width: 100%;
+										 	}
+
+										 					 	
+				}
+
+				@media (max-width: 500px) {
+											.Box_Container{
+														flex-direction:column;
+											}
+												
+											.Box_Articolo {
+											    flex: 100%;
+											    max-width: 100%;
+											}
+
+											.Box_Button_Nav{
+														flex: 100%;
+											    		max-width: 100%;														
+											}
+
+														
+				}		
